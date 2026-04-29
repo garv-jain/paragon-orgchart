@@ -15,228 +15,108 @@
     padding: 32px 24px 64px;
   }
 
-  .page-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-  .page-header h1 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #042C53;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .page-header p {
-    font-size: 13px;
-    color: #73726c;
-    margin-top: 4px;
-  }
+  .page-header { text-align: center; margin-bottom: 28px; }
+  .page-header h1 { font-size: 20px; font-weight: 600; color: #042C53; letter-spacing: 0.04em; text-transform: uppercase; }
+  .page-header p { font-size: 13px; color: #73726c; margin-top: 4px; }
 
-  .controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
+  .controls { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 24px; }
 
   .search-bar input {
-    width: 300px;
-    font-size: 13px;
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid #c8c7c0;
-    background: #fff;
-    color: #1a1a18;
-    outline: none;
-    font-family: inherit;
+    width: 300px; font-size: 13px; padding: 7px 14px;
+    border-radius: 20px; border: 1px solid #c8c7c0;
+    background: #fff; color: #1a1a18; outline: none; font-family: inherit;
   }
   .search-bar input:focus { border-color: #378ADD; }
 
-  .filter-export-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .dept-filters { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
-
-  .dept-btn {
-    font-size: 11px;
-    padding: 4px 13px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 1px solid #c8c7c0;
-    background: #fff;
-    color: #5f5e5a;
-    font-family: inherit;
-    transition: all 0.15s;
-  }
-  .dept-btn:hover { background: #eeede8; }
-  .dept-btn.active { color: #fff; border-color: transparent; }
-  .dept-btn[data-dept="all"].active { background: #042C53; }
-  .dept-btn[data-dept="ops"].active { background: #185FA5; }
-  .dept-btn[data-dept="pol"].active { background: #534AB7; }
-  .dept-btn[data-dept="fin"].active { background: #0F6E56; }
-  .dept-btn[data-dept="par"].active { background: #993C1D; }
-  .dept-btn[data-dept="out"].active { background: #993556; }
-  .dept-btn[data-dept="adv"].active { background: #854F0B; }
-
+  .filter-row { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; align-items: center; }
   .divider { width: 1px; height: 20px; background: #d3d1c7; }
 
-  .export-btn {
-    font-size: 11px;
-    padding: 4px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 1px solid #c8c7c0;
-    background: #fff;
-    color: #5f5e5a;
-    font-family: inherit;
-    transition: all 0.15s;
-    white-space: nowrap;
+  .dept-btn, .pos-btn, .export-btn {
+    font-size: 11px; padding: 4px 13px; border-radius: 20px; cursor: pointer;
+    border: 1px solid #c8c7c0; background: #fff; color: #5f5e5a;
+    font-family: inherit; transition: all 0.15s; white-space: nowrap;
   }
-  .export-btn:hover { background: #eeede8; }
+  .dept-btn:hover, .pos-btn:hover, .export-btn:hover { background: #eeede8; }
   .export-btn:disabled { opacity: 0.5; cursor: default; }
 
-  /* Tree */
-  .tree {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: auto;
-    padding-bottom: 16px;
-  }
+  .dept-btn.active { color: #fff; border-color: transparent; }
+  .dept-btn[data-dept="all"].active { background: #042C53; }
+  .dept-btn[data-dept="fin"].active  { background: #0F6E56; }
+  .dept-btn[data-dept="ops"].active  { background: #185FA5; }
+  .dept-btn[data-dept="pol"].active  { background: #534AB7; }
+  .dept-btn[data-dept="par"].active  { background: #993C1D; }
+  .dept-btn[data-dept="adv"].active  { background: #854F0B; }
+  .dept-btn[data-dept="out"].active  { background: #993556; }
 
+  .pos-btn.active { background: #1a1a18; color: #fff; border-color: transparent; }
+
+  .legend { display: flex; gap: 14px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #73726c; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  .tree { display: flex; flex-direction: column; align-items: center; overflow-x: auto; padding-bottom: 16px; }
   .exec-row { display: flex; gap: 8px; justify-content: center; }
+  .directors-row { display: flex; gap: 20px; justify-content: center; margin-top: 28px; flex-wrap: wrap; align-items: flex-start; }
 
-  .directors-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 28px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .dept-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  .dept-block { display: flex; flex-direction: column; align-items: center; }
   .dept-block.hidden { display: none; }
 
   .dept-label {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 7px;
-    padding: 2px 11px;
-    border-radius: 10px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.07em; margin-bottom: 7px; padding: 2px 11px; border-radius: 10px;
   }
 
   .colead-row { display: flex; gap: 6px; justify-content: center; }
   .dept-members { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; align-items: center; }
 
   .node-box {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 7px 11px;
-    border-radius: 7px;
-    cursor: pointer;
-    border: 1px solid;
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 7px 11px; border-radius: 7px; cursor: pointer; border: 1px solid;
     transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s;
-    width: 134px;
-    text-align: center;
+    width: 134px; text-align: center;
   }
   .node-box:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
   .node-box.highlight { outline: 2px solid #378ADD; outline-offset: 2px; }
   .node-box.dimmed { opacity: 0.15; pointer-events: none; }
+  .node-box.pos-hidden { display: none; }
 
   .node-name { font-size: 11px; font-weight: 600; line-height: 1.35; }
   .node-title { font-size: 10px; line-height: 1.35; margin-top: 2px; }
 
-  /* Role styles */
-  .role-exec     { background: #042C53; border-color: #0C447C; color: #B5D4F4; }
+  .role-exec { background: #042C53; border-color: #0C447C; color: #B5D4F4; border-left-width: 3px; }
   .role-exec .node-title { color: #85B7EB; }
-  .role-dir-ops  { background: #185FA5; border-color: #0C447C; color: #fff; }
-  .role-dir-ops .node-title { color: #B5D4F4; }
-  .role-dir-pol  { background: #534AB7; border-color: #3C3489; color: #fff; }
-  .role-dir-pol .node-title { color: #CECBF6; }
-  .role-dir-par  { background: #993C1D; border-color: #712B13; color: #fff; }
-  .role-dir-par .node-title { color: #F5C4B3; }
-  .role-dir-adv  { background: #854F0B; border-color: #633806; color: #fff; }
-  .role-dir-adv .node-title { color: #FAC775; }
-  .role-staff    { background: #fff; border-color: #c8c7c0; color: #1a1a18; }
+  .role-director { background: #1a1a18; border-color: #3d3d3a; color: #fff; border-left-width: 3px; }
+  .role-director .node-title { color: #b4b2a9; }
+  .role-staff { background: #fff; border-color: #c8c7c0; color: #1a1a18; }
   .role-staff .node-title { color: #73726c; }
 
-  /* Dept label colors */
+  .label-fin { background: #9FE1CB; color: #085041; }
   .label-ops { background: #B5D4F4; color: #0C447C; }
   .label-pol { background: #CECBF6; color: #3C3489; }
-  .label-fin { background: #9FE1CB; color: #085041; }
   .label-par { background: #F5C4B3; color: #712B13; }
-  .label-out { background: #F4C0D1; color: #72243E; }
   .label-adv { background: #FAC775; color: #633806; }
+  .label-out { background: #F4C0D1; color: #72243E; }
 
-  /* Staff accent borders */
-  .node-ops { border-left: 2px solid #185FA5; }
-  .node-pol { border-left: 2px solid #534AB7; }
-  .node-fin { border-left: 2px solid #1D9E75; }
-  .node-par { border-left: 2px solid #993C1D; }
-  .node-out { border-left: 2px solid #993556; }
-  .node-adv { border-left: 2px solid #854F0B; }
+  .node-fin { border-left: 3px solid #1D9E75; }
+  .node-ops { border-left: 3px solid #185FA5; }
+  .node-pol { border-left: 3px solid #534AB7; }
+  .node-par { border-left: 3px solid #993C1D; }
+  .node-adv { border-left: 3px solid #854F0B; }
+  .node-out { border-left: 3px solid #993556; }
 
-  /* Info panel */
   .info-panel {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #fff;
-    border: 1px solid #c8c7c0;
-    border-radius: 12px;
-    padding: 14px 16px;
-    min-width: 190px;
-    max-width: 230px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    z-index: 100;
-    display: none;
+    position: fixed; bottom: 24px; right: 24px;
+    background: #fff; border: 1px solid #c8c7c0; border-radius: 12px;
+    padding: 14px 16px; min-width: 190px; max-width: 230px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 100; display: none;
   }
   .info-panel.show { display: block; }
   .info-name { font-size: 14px; font-weight: 600; color: #1a1a18; }
   .info-role { font-size: 12px; color: #73726c; margin-top: 3px; }
-  .info-tag {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 9px;
-    border-radius: 10px;
-  }
-  .info-close {
-    position: absolute; top: 8px; right: 10px;
-    font-size: 15px; cursor: pointer; color: #73726c;
-    background: none; border: none; font-family: inherit;
-  }
+  .info-tag { display: inline-block; margin-top: 8px; font-size: 10px; font-weight: 600; padding: 2px 9px; border-radius: 10px; }
+  .info-close { position: absolute; top: 8px; right: 10px; font-size: 15px; cursor: pointer; color: #73726c; background: none; border: none; font-family: inherit; }
 
-  /* Legend */
-  .legend {
-    display: flex; gap: 14px; justify-content: center;
-    margin-bottom: 20px; flex-wrap: wrap;
-  }
-  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #73726c; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-  .page-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 11px;
-    color: #b4b2a9;
-  }
+  .page-footer { text-align: center; margin-top: 40px; font-size: 11px; color: #b4b2a9; }
 </style>
 </head>
 <body>
@@ -250,16 +130,19 @@
   <div class="search-bar">
     <input type="text" id="search" placeholder="Search by name or role…" oninput="applyFilters()" />
   </div>
-  <div class="filter-export-row">
-    <div class="dept-filters">
-      <button class="dept-btn active" data-dept="all" onclick="setDept('all')">All</button>
-      <button class="dept-btn" data-dept="ops" onclick="setDept('ops')">Operations</button>
-      <button class="dept-btn" data-dept="pol" onclick="setDept('pol')">Policy</button>
-      <button class="dept-btn" data-dept="fin" onclick="setDept('fin')">Finance</button>
-      <button class="dept-btn" data-dept="par" onclick="setDept('par')">Partnerships</button>
-      <button class="dept-btn" data-dept="out" onclick="setDept('out')">Outreach</button>
-      <button class="dept-btn" data-dept="adv" onclick="setDept('adv')">Advancements</button>
-    </div>
+  <div class="filter-row">
+    <button class="dept-btn active" data-dept="all" onclick="setDept('all')">All depts</button>
+    <button class="dept-btn" data-dept="fin" onclick="setDept('fin')">Finance</button>
+    <button class="dept-btn" data-dept="ops" onclick="setDept('ops')">Operations</button>
+    <button class="dept-btn" data-dept="pol" onclick="setDept('pol')">Policy</button>
+    <button class="dept-btn" data-dept="par" onclick="setDept('par')">Partnerships</button>
+    <button class="dept-btn" data-dept="adv" onclick="setDept('adv')">Advancements</button>
+    <button class="dept-btn" data-dept="out" onclick="setDept('out')">Outreach</button>
+    <div class="divider"></div>
+    <button class="pos-btn active" data-pos="all" onclick="setPos('all')">All roles</button>
+    <button class="pos-btn" data-pos="exec" onclick="setPos('exec')">Exec Directors</button>
+    <button class="pos-btn" data-pos="director" onclick="setPos('director')">Directors</button>
+    <button class="pos-btn" data-pos="staff" onclick="setPos('staff')">Staff</button>
     <div class="divider"></div>
     <button class="export-btn" id="export-btn" onclick="exportPNG()">↓ Export PNG</button>
   </div>
@@ -267,98 +150,97 @@
 
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:#042C53"></div>Executive</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#378ADD"></div>Director</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1a1a18"></div>Director</div>
   <div class="legend-item"><div class="legend-dot" style="background:#fff;border:1px solid #c8c7c0"></div>Staff</div>
 </div>
 
 <div class="tree" id="chart-area">
 
-  <!-- Executives -->
   <div class="exec-row">
-    <div class="node-box role-exec" onclick="showInfo('Sofia Rodriguez','Executive Director','Leadership','#042C53','#B5D4F4')">
+    <div class="node-box role-exec" data-pos="exec" data-dept="exec" onclick="showInfo('Sofia Rodriguez','Executive Director','Leadership','#042C53','#B5D4F4')">
       <div class="node-name">Sofia Rodriguez</div><div class="node-title">Executive Director</div>
     </div>
-    <div class="node-box role-exec" onclick="showInfo('Annie Beckman','Executive Director','Leadership','#042C53','#B5D4F4')">
+    <div class="node-box role-exec" data-pos="exec" data-dept="exec" onclick="showInfo('Annie Beckman','Executive Director','Leadership','#042C53','#B5D4F4')">
       <div class="node-name">Annie Beckman</div><div class="node-title">Executive Director</div>
     </div>
   </div>
 
   <div class="directors-row">
 
+    <!-- Finance — leftmost -->
+    <div class="dept-block" data-dept="fin">
+      <div class="dept-label label-fin">Finance</div>
+      <div class="dept-members" style="margin-top:0">
+        <div class="node-box role-staff node-fin" data-pos="staff" data-dept="fin" onclick="showInfo('Ronnie Cheng','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Ronnie Cheng</div><div class="node-title">Grant Coordinator</div></div>
+        <div class="node-box role-staff node-fin" data-pos="staff" data-dept="fin" onclick="showInfo('Parita Shah','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Parita Shah</div><div class="node-title">Grant Coordinator</div></div>
+        <div class="node-box role-staff node-fin" data-pos="staff" data-dept="fin" onclick="showInfo('Nisha Karki','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Nisha Karki</div><div class="node-title">Grant Coordinator</div></div>
+      </div>
+    </div>
+
     <!-- Operations -->
-    <div class="dept-block" id="dept-ops" data-dept="ops">
+    <div class="dept-block" data-dept="ops">
       <div class="dept-label label-ops">Operations</div>
-      <div class="node-box role-dir-ops" onclick="showInfo('Sharanya Maddukuri','Operations Director','Operations','#185FA5','#fff')">
+      <div class="node-box role-director node-ops" data-pos="director" data-dept="ops" onclick="showInfo('Sharanya Maddukuri','Operations Director','Operations','#1a1a18','#fff')">
         <div class="node-name">Sharanya Maddukuri</div><div class="node-title">Operations Director</div>
       </div>
       <div class="dept-members">
-        <div class="node-box role-staff node-ops" onclick="showInfo('Srija Konathala','Project Mgmt Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Srija Konathala</div><div class="node-title">Project Mgmt Coord.</div></div>
-        <div class="node-box role-staff node-ops" onclick="showInfo('Emmy Chavez','Project Mgmt Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Emmy Chavez</div><div class="node-title">Project Mgmt Coord.</div></div>
-        <div class="node-box role-staff node-ops" onclick="showInfo('Toki Zhumadil','Program Operations Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Toki Zhumadil</div><div class="node-title">Program Ops Coord.</div></div>
-        <div class="node-box role-staff node-ops" onclick="showInfo('Rhea Midhe','Program Operations Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Rhea Midhe</div><div class="node-title">Program Ops Coord.</div></div>
+        <div class="node-box role-staff node-ops" data-pos="staff" data-dept="ops" onclick="showInfo('Srija Konathala','Project Mgmt Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Srija Konathala</div><div class="node-title">Project Mgmt Coord.</div></div>
+        <div class="node-box role-staff node-ops" data-pos="staff" data-dept="ops" onclick="showInfo('Emmy Chavez','Project Mgmt Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Emmy Chavez</div><div class="node-title">Project Mgmt Coord.</div></div>
+        <div class="node-box role-staff node-ops" data-pos="staff" data-dept="ops" onclick="showInfo('Toki Zhumadil','Program Operations Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Toki Zhumadil</div><div class="node-title">Program Ops Coord.</div></div>
+        <div class="node-box role-staff node-ops" data-pos="staff" data-dept="ops" onclick="showInfo('Rhea Midhe','Program Operations Coordinator','Operations','#185FA5','#B5D4F4')"><div class="node-name">Rhea Midhe</div><div class="node-title">Program Ops Coord.</div></div>
       </div>
     </div>
 
     <!-- Policy -->
-    <div class="dept-block" id="dept-pol" data-dept="pol">
+    <div class="dept-block" data-dept="pol">
       <div class="dept-label label-pol">Policy</div>
       <div class="colead-row">
-        <div class="node-box role-dir-pol" onclick="showInfo('Jacqueline Malaret','Policy Director','Policy','#534AB7','#fff')">
+        <div class="node-box role-director node-pol" data-pos="director" data-dept="pol" onclick="showInfo('Jacqueline Malaret','Policy Director','Policy','#1a1a18','#fff')">
           <div class="node-name">Jacqueline Malaret</div><div class="node-title">Policy Director</div>
         </div>
-        <div class="node-box role-dir-pol" onclick="showInfo('Jared Salcedo','Education Director','Policy','#534AB7','#fff')">
+        <div class="node-box role-director node-pol" data-pos="director" data-dept="pol" onclick="showInfo('Jared Salcedo','Education Director','Policy','#1a1a18','#fff')">
           <div class="node-name">Jared Salcedo</div><div class="node-title">Education Director</div>
         </div>
       </div>
       <div class="dept-members">
-        <div class="node-box role-staff node-pol" onclick="showInfo('Lizzie Ong','Policy Coordinator','Policy','#534AB7','#CECBF6')"><div class="node-name">Lizzie Ong</div><div class="node-title">Policy Coordinator</div></div>
-        <div class="node-box role-staff node-pol" onclick="showInfo('Wajiha Mekki','Policy Coordinator','Policy','#534AB7','#CECBF6')"><div class="node-name">Wajiha Mekki</div><div class="node-title">Policy Coordinator</div></div>
-      </div>
-    </div>
-
-    <!-- Finance -->
-    <div class="dept-block" id="dept-fin" data-dept="fin">
-      <div class="dept-label label-fin">Finance</div>
-      <div class="dept-members" style="margin-top:0">
-        <div class="node-box role-staff node-fin" onclick="showInfo('Ronnie Cheng','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Ronnie Cheng</div><div class="node-title">Grant Coordinator</div></div>
-        <div class="node-box role-staff node-fin" onclick="showInfo('Parita Shah','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Parita Shah</div><div class="node-title">Grant Coordinator</div></div>
-        <div class="node-box role-staff node-fin" onclick="showInfo('Nisha Karki','Grant Coordinator','Finance','#0F6E56','#9FE1CB')"><div class="node-name">Nisha Karki</div><div class="node-title">Grant Coordinator</div></div>
+        <div class="node-box role-staff node-pol" data-pos="staff" data-dept="pol" onclick="showInfo('Lizzie Ong','Policy Coordinator','Policy','#534AB7','#CECBF6')"><div class="node-name">Lizzie Ong</div><div class="node-title">Policy Coordinator</div></div>
+        <div class="node-box role-staff node-pol" data-pos="staff" data-dept="pol" onclick="showInfo('Wajiha Mekki','Policy Coordinator','Policy','#534AB7','#CECBF6')"><div class="node-name">Wajiha Mekki</div><div class="node-title">Policy Coordinator</div></div>
       </div>
     </div>
 
     <!-- Partnerships -->
-    <div class="dept-block" id="dept-par" data-dept="par">
+    <div class="dept-block" data-dept="par">
       <div class="dept-label label-par">Partnerships</div>
-      <div class="node-box role-dir-par" onclick="showInfo('Desiree Junfijah','Partnerships Director','Partnerships','#993C1D','#fff')">
+      <div class="node-box role-director node-par" data-pos="director" data-dept="par" onclick="showInfo('Desiree Junfijah','Partnerships Director','Partnerships','#1a1a18','#fff')">
         <div class="node-name">Desiree Junfijah</div><div class="node-title">Partnerships Director</div>
       </div>
       <div class="dept-members">
-        <div class="node-box role-staff node-par" onclick="showInfo('Dim Zuun','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Dim Zuun</div><div class="node-title">Partnerships Coord.</div></div>
-        <div class="node-box role-staff node-par" onclick="showInfo('Ahmed Diongue','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Ahmed Diongue</div><div class="node-title">Partnerships Coord.</div></div>
-        <div class="node-box role-staff node-par" onclick="showInfo('Katie Ortega','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Katie Ortega</div><div class="node-title">Partnerships Coord.</div></div>
-        <div class="node-box role-staff node-par" onclick="showInfo('Rina Munakata','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Rina Munakata</div><div class="node-title">Partnerships Coord.</div></div>
-      </div>
-    </div>
-
-    <!-- Outreach -->
-    <div class="dept-block" id="dept-out" data-dept="out">
-      <div class="dept-label label-out">Outreach</div>
-      <div class="dept-members" style="margin-top:0">
-        <div class="node-box role-staff node-out" onclick="showInfo('Maya Lukalapu','Outreach Coordinator','Outreach','#993556','#F4C0D1')"><div class="node-name">Maya Lukalapu</div><div class="node-title">Outreach Coordinator</div></div>
+        <div class="node-box role-staff node-par" data-pos="staff" data-dept="par" onclick="showInfo('Dim Zuun','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Dim Zuun</div><div class="node-title">Partnerships Coord.</div></div>
+        <div class="node-box role-staff node-par" data-pos="staff" data-dept="par" onclick="showInfo('Ahmed Diongue','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Ahmed Diongue</div><div class="node-title">Partnerships Coord.</div></div>
+        <div class="node-box role-staff node-par" data-pos="staff" data-dept="par" onclick="showInfo('Katie Ortega','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Katie Ortega</div><div class="node-title">Partnerships Coord.</div></div>
+        <div class="node-box role-staff node-par" data-pos="staff" data-dept="par" onclick="showInfo('Rina Munakata','Partnerships Coordinator','Partnerships','#993C1D','#F5C4B3')"><div class="node-name">Rina Munakata</div><div class="node-title">Partnerships Coord.</div></div>
       </div>
     </div>
 
     <!-- Advancements -->
-    <div class="dept-block" id="dept-adv" data-dept="adv">
+    <div class="dept-block" data-dept="adv">
       <div class="dept-label label-adv">Advancements</div>
-      <div class="node-box role-dir-adv" onclick="showInfo('Garv Jain','Advancements Director','Advancements','#854F0B','#fff')">
+      <div class="node-box role-director node-adv" data-pos="director" data-dept="adv" onclick="showInfo('Garv Jain','Advancements Director','Advancements','#1a1a18','#fff')">
         <div class="node-name">Garv Jain</div><div class="node-title">Advancements Director</div>
       </div>
       <div class="dept-members">
-        <div class="node-box role-staff node-adv" onclick="showInfo('Ruth Ayele','Prof. Development Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Ruth Ayele</div><div class="node-title">Prof. Dev. Coord.</div></div>
-        <div class="node-box role-staff node-adv" onclick="showInfo('Kalissa Greene','News Media Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Kalissa Greene</div><div class="node-title">News Media Coord.</div></div>
-        <div class="node-box role-staff node-adv" onclick="showInfo('Nghia Pham','Research Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Nghia Pham</div><div class="node-title">Research Coordinator</div></div>
-        <div class="node-box role-staff node-adv" onclick="showInfo('Esther Suh','Head Graphic Design','Advancements','#854F0B','#FAC775')"><div class="node-name">Esther Suh</div><div class="node-title">Head Graphic Design</div></div>
+        <div class="node-box role-staff node-adv" data-pos="staff" data-dept="adv" onclick="showInfo('Ruth Ayele','Prof. Development Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Ruth Ayele</div><div class="node-title">Prof. Dev. Coord.</div></div>
+        <div class="node-box role-staff node-adv" data-pos="staff" data-dept="adv" onclick="showInfo('Kalissa Greene','News Media Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Kalissa Greene</div><div class="node-title">News Media Coord.</div></div>
+        <div class="node-box role-staff node-adv" data-pos="staff" data-dept="adv" onclick="showInfo('Nghia Pham','Research Coordinator','Advancements','#854F0B','#FAC775')"><div class="node-name">Nghia Pham</div><div class="node-title">Research Coordinator</div></div>
+        <div class="node-box role-staff node-adv" data-pos="staff" data-dept="adv" onclick="showInfo('Esther Suh','Head Graphic Design','Advancements','#854F0B','#FAC775')"><div class="node-name">Esther Suh</div><div class="node-title">Head Graphic Design</div></div>
+      </div>
+    </div>
+
+    <!-- Outreach — rightmost -->
+    <div class="dept-block" data-dept="out">
+      <div class="dept-label label-out">Outreach</div>
+      <div class="dept-members" style="margin-top:0">
+        <div class="node-box role-staff node-out" data-pos="staff" data-dept="out" onclick="showInfo('Maya Lukalapu','Outreach Coordinator','Outreach','#993556','#F4C0D1')"><div class="node-name">Maya Lukalapu</div><div class="node-title">Outreach Coordinator</div></div>
       </div>
     </div>
 
@@ -367,7 +249,6 @@
 
 <div class="page-footer">Paragon Policy Fellowship &nbsp;·&nbsp; paragonfellowship.org</div>
 
-<!-- Info panel -->
 <div class="info-panel" id="info-panel">
   <button class="info-close" onclick="closeInfo()">✕</button>
   <div class="info-name" id="ip-name"></div>
@@ -378,22 +259,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 let activeDept = 'all';
+let activePos = 'all';
 
 function setDept(dept) {
   activeDept = dept;
   document.querySelectorAll('.dept-btn').forEach(b => b.classList.toggle('active', b.dataset.dept === dept));
-  document.querySelectorAll('.dept-block').forEach(d => {
-    d.classList.toggle('hidden', dept !== 'all' && d.dataset.dept !== dept);
-  });
+  applyFilters();
+}
+
+function setPos(pos) {
+  activePos = pos;
+  document.querySelectorAll('.pos-btn').forEach(b => b.classList.toggle('active', b.dataset.pos === pos));
   applyFilters();
 }
 
 function applyFilters() {
   const q = document.getElementById('search').value.toLowerCase().trim();
+  document.querySelectorAll('.dept-block').forEach(d => {
+    d.classList.toggle('hidden', activeDept !== 'all' && d.dataset.dept !== activeDept);
+  });
   document.querySelectorAll('.node-box').forEach(el => {
-    el.classList.remove('highlight', 'dimmed');
-    if (!q) return;
-    el.classList.add(el.textContent.toLowerCase().includes(q) ? 'highlight' : 'dimmed');
+    el.classList.remove('pos-hidden', 'highlight', 'dimmed');
+    const pos = el.dataset.pos;
+    if (activePos !== 'all' && pos !== activePos) { el.classList.add('pos-hidden'); return; }
+    if (q) el.classList.add(el.textContent.toLowerCase().includes(q) ? 'highlight' : 'dimmed');
   });
 }
 
@@ -401,21 +290,18 @@ function showInfo(name, role, dept, bg, fg) {
   document.getElementById('ip-name').textContent = name;
   document.getElementById('ip-role').textContent = role;
   const tag = document.getElementById('ip-tag');
-  tag.textContent = dept;
-  tag.style.background = bg;
-  tag.style.color = fg;
+  tag.textContent = dept; tag.style.background = bg; tag.style.color = fg;
   document.getElementById('info-panel').classList.add('show');
 }
 function closeInfo() { document.getElementById('info-panel').classList.remove('show'); }
 
 document.addEventListener('click', e => {
-  if (!e.target.closest('.node-box') && !e.target.closest('.info-panel') && !e.target.closest('.dept-btn')) closeInfo();
+  if (!e.target.closest('.node-box') && !e.target.closest('.info-panel') && !e.target.closest('.dept-btn') && !e.target.closest('.pos-btn')) closeInfo();
 });
 
 async function exportPNG() {
   const btn = document.getElementById('export-btn');
-  btn.disabled = true;
-  btn.textContent = 'Exporting…';
+  btn.disabled = true; btn.textContent = 'Exporting…';
   closeInfo();
   const target = document.getElementById('chart-area');
   const pad = 40;
@@ -446,8 +332,7 @@ async function exportPNG() {
     link.href = final.toDataURL('image/png');
     link.click();
   } catch(e) { alert('Export failed: ' + e.message); }
-  btn.disabled = false;
-  btn.textContent = '↓ Export PNG';
+  btn.disabled = false; btn.textContent = '↓ Export PNG';
 }
 </script>
 </body>
